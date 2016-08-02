@@ -1,0 +1,9 @@
+{
+  "generator-summon": {
+    "summon:github": {
+      "use-summon:github": true,
+      "name": "vega-view",
+      "githubAccount": "kristw"
+    }
+  }
+}
