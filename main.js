@@ -1,75 +1,91 @@
+const app = require('electron').remote;
+const dialog = app.dialog;
+const fs = require('fs');
+
 const vg = require('vega');
+const vl = require('vega-lite');
 
-function render(){
-  const spec = {
-    "width": document.documentElement.clientWidth - 40 - 10,
-    "height": document.documentElement.clientHeight - 40 - 10,
-    "padding": {"top": 10, "left": 30, "bottom": 30, "right": 10},
-    "data": [
-      {
-        "name": "table",
-        "values": [
-          {"x": 1,  "y": 28}, {"x": 2,  "y": 55},
-          {"x": 3,  "y": 43}, {"x": 4,  "y": 91},
-          {"x": 5,  "y": 81}, {"x": 6,  "y": 53},
-          {"x": 7,  "y": 19}, {"x": 8,  "y": 87},
-          {"x": 9,  "y": 52}, {"x": 10, "y": 48},
-          {"x": 11, "y": 24}, {"x": 12, "y": 49},
-          {"x": 13, "y": 87}, {"x": 14, "y": 66},
-          {"x": 15, "y": 17}, {"x": 16, "y": 27},
-          {"x": 17, "y": 68}, {"x": 18, "y": 16},
-          {"x": 19, "y": 49}, {"x": 20, "y": 15}
-        ]
-      }
-    ],
-    "scales": [
-      {
-        "name": "x",
-        "type": "ordinal",
-        "range": "width",
-        "domain": {"data": "table", "field": "x"}
-      },
-      {
-        "name": "y",
-        "type": "linear",
-        "range": "height",
-        "domain": {"data": "table", "field": "y"},
-        "nice": true
-      }
-    ],
-    "axes": [
-      {"type": "x", "scale": "x"},
-      {"type": "y", "scale": "y"}
-    ],
-    "marks": [
-      {
-        "type": "rect",
-        "from": {"data": "table"},
-        "properties": {
-          "enter": {
-            "x": {"scale": "x", "field": "x"},
-            "width": {"scale": "x", "band": true, "offset": -1},
-            "y": {"scale": "y", "field": "y"},
-            "y2": {"scale": "y", "value": 0}
-          },
-          "update": {
-            "fill": {"value": "steelblue"}
-          },
-          "hover": {
-            "fill": {"value": "red"}
-          }
-        }
-      }
-    ]
-  };
+const state = {
+  mode: 'vega',
+  filepath: null,
+  rawSpec: null,
+  vis: null,
+};
 
-  vg.parse.spec(spec, (error, chart) => {
-    chart({el:"#vis"}).update();
+function readFile(filepath){
+  fs.readFile(filepath, 'utf-8', function (err, data) {
+    if(err){
+      alert('An error occurred reading the file :' + err.message);
+      return;
+    }
+
+    document.title = `Vega View - ${filepath}`;
+
+    try {
+      const rawSpec = JSON.parse(data);
+      state.rawSpec = rawSpec;
+      render();
+    } catch(ex) {
+      showError(`Error: ${ex.message}`);
+    }
   });
 }
 
-render();
+function render() {
+  const rawSpec = state.rawSpec;
+  if(rawSpec) {
+    let vegaSpec;
+    try {
+      vegaSpec = state.mode==='vega' ? rawSpec : vl.compile(rawSpec).spec;
+    } catch (ex) {
+      showError(`Invalid spec for ${state.mode}`);
+    }
 
-window.addEventListener('resize', ()=>{
+    if(vegaSpec) {
+      vg.parse.spec(vegaSpec, (error, chart) => {
+        state.vis = chart({ el: '#vis' }).update();
+      });
+      vis.innerHTML = '';
+    }
+  }
+}
+
+const vis = document.getElementById('vis');
+
+function showError(msg) {
+  vis.innerHTML = msg;
+}
+
+document.getElementById('load-btn').addEventListener('click', () => {
+  dialog.showOpenDialog(function (fileNames) {
+    // fileNames is an array that contains all the selected
+    if(fileNames === undefined){
+      console.log("No file selected");
+    } else {
+      readFile(fileNames[0]);
+    }
+  });
+});
+
+const vegaBtn = document.getElementById('vega-btn');
+const vegaLiteBtn = document.getElementById('vega-lite-btn');
+
+vegaBtn.addEventListener('click', () => {
+  state.mode = 'vega';
+  vegaBtn.className = 'button -purple center';
+  vegaLiteBtn.className = 'button -gray center';
   render();
 });
+
+vegaLiteBtn.addEventListener('click', () => {
+  state.mode = 'vega-lite';
+  vegaLiteBtn.className = 'button -purple center';
+  vegaBtn.className = 'button -gray center';
+  render();
+});
+
+// window.addEventListener('resize', ()=>{
+//     "width": document.documentElement.clientWidth - 40 - 10,
+//     "height": document.documentElement.clientHeight - 40 - 10,
+//   render();
+// });

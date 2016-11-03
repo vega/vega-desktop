@@ -1,27 +1,118 @@
 html,
 body {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-	font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+  width: 100%;
+  height: 100%;
 }
 
-header {
-	position: absolute;
-	width: 500px;
-	height: 250px;
-	top: 50%;
-	left: 50%;
-	margin-top: -125px;
-	margin-left: -250px;
-	text-align: center;
+.menubar {
+  background-color: #eee;
+  padding: 5px;
 }
 
-header h1 {
-	font-size: 60px;
-	font-weight: 100;
-	margin: 0;
-	padding: 0;
+.button {
+  display: inline-block;
+  overflow: hidden;
+  margin: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 60ms ease-in-out;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none !important;
+  text-transform: none;
+  text-transform: capitalize;
+  color: #fff;
+  border: 0 none;
+  // border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 160px;
+}
+.button:hover {
+  transition: all 60ms ease;
+  opacity: .85;
+}
+.button:active {
+  transition: all 60ms ease;
+  opacity: .75;
+}
+.button:focus {
+  outline: 1px dotted #959595;
+  outline-offset: -4px;
+}
+
+.button.-regular {
+  color: #202129;
+  background-color: #edeeee;
+}
+.button.-regular:hover {
+  color: #202129;
+  background-color: #e1e2e2;
+  opacity: 1;
+}
+.button.-regular:active {
+  background-color: #d5d6d6;
+  opacity: 1;
+}
+
+.button.-gray {
+  color: #202129;
+  background-color: #e1e2e2;
+  opacity: 1;
+}
+.button.-gray:hover {
+  color: #202129;
+  background-color: #d5d6d6;
+  opacity: 1;
+}
+
+.button.-gray2 {
+  color: #202129;
+  background-color: #ddd;
+  opacity: 1;
+}
+.button.-gray2:hover {
+  color: #202129;
+  background-color: #d5d6d6;
+  opacity: 1;
+}
+
+.button.-gold {
+  color: #f4f7f7;
+  background: #D5A928;
+}
+
+.button.-purple {
+  color: #f4f7f7;
+  background: #652C90;
+}
+
+.float-right {
+  float: right;
+}
+
+.toggle-group .button:first-child{
+  margin-right: 0;
+}
+.toggle-group .button{
+  float: left;
+  margin-left: 0;
+}
+
+.main {
+  text-align: center;
+  margin-top: 30px;
 }

@@ -2,10 +2,19 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Vega-View</title>
+		<title>Vega View</title>
 		<link rel="stylesheet" href="index.css">
 	</head>
 	<body>
+		<div class="menubar">
+			<div class="float-right">
+				<div class="toggle-group">
+					<button class="button -purple center" id="vega-btn">Vega</button>
+					<button class="button -gray center" id="vega-lite-btn">Vega-lite</button>
+				</div>
+			</div>
+			<button class="button -gray2 center" id="load-btn">Load file</button>
+		</div>
 		<div class="container">
 			<section class="main">
 				<div id="vis"></div>
