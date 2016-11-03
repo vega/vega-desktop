@@ -1,6 +1,6 @@
 # vega-view
 
-> My stunning app
+> App for viewing visualizations created in Vega or Vega-lite
 
 
 ## Dev

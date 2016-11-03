@@ -1,5 +1,7 @@
 const electron = require('electron');
 const app = electron.app;
+const path = require('path');
+const url = require('url');
 
 // adds debug features like hotkeys for triggering dev tools and reload
 require('electron-debug')();
@@ -19,7 +21,16 @@ function createMainWindow() {
 		height: 400
 	});
 
-	win.loadURL(`file://${__dirname}/viewer.html`);
+  // and load the index.html of the app.
+  win.loadURL(url.format({
+    pathname: path.join(__dirname, 'viewer.html'),
+    protocol: 'file:',
+    slashes: true
+  }));
+
+  // Open the DevTools.
+  win.webContents.openDevTools();
+
 	win.on('closed', onClosed);
 
 	return win;
@@ -32,7 +43,8 @@ app.on('window-all-closed', () => {
 });
 
 app.on('activate', () => {
-	if (!mainWindow) {
+  // On OS X it's common to re-create a window in the app when the
+  // dock icon is clicked and there are no other windows open.	if (!mainWindow) {
 		mainWindow = createMainWindow();
 	}
 });

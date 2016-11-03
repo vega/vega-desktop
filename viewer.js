@@ -92,3 +92,13 @@ vegaLiteBtn.addEventListener('click', () => {
 //     "height": document.documentElement.clientHeight - 40 - 10,
 //   render();
 // });
+
+
+document.ondragover = document.ondrop = (ev) => {
+  ev.preventDefault()
+}
+
+document.body.ondrop = (ev) => {
+  console.log(ev.dataTransfer.files[0].path)
+  ev.preventDefault()
+}
