@@ -37,15 +37,12 @@ function render() {
     let vegaSpec;
     try {
       vegaSpec = state.mode==='vega' ? rawSpec : vl.compile(rawSpec).spec;
-    } catch (ex) {
-      showError(`Invalid spec for ${state.mode}`);
-    }
-
-    if(vegaSpec) {
+      vis.innerHTML = '';
       vg.parse.spec(vegaSpec, (error, chart) => {
         state.vis = chart({ el: '#vis' }).update();
       });
-      vis.innerHTML = '';
+    } catch (ex) {
+      showError(`Invalid spec for ${state.mode}`);
     }
   }
 }
@@ -57,7 +54,13 @@ function showError(msg) {
 }
 
 document.getElementById('load-btn').addEventListener('click', () => {
-  dialog.showOpenDialog(function (fileNames) {
+  dialog.showOpenDialog({
+    title: "Select Vega file",
+    filters: [
+      {name: 'JSON Files', extensions: ['json']},
+      {name: 'All Files', extensions: ['*']}
+    ]
+  }, fileNames => {
     // fileNames is an array that contains all the selected
     if(fileNames === undefined){
       console.log("No file selected");
