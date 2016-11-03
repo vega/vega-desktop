@@ -6,19 +6,21 @@
 		<link rel="stylesheet" href="viewer.css">
 	</head>
 	<body>
-		<div class="menubar">
-			<div class="float-right">
-				<div class="toggle-group">
-					<button class="button -purple center" id="vega-btn">Vega</button>
-					<button class="button -gray center" id="vega-lite-btn">Vega-lite</button>
+		<div id="drop-area">
+			<div class="menubar">
+				<div class="float-right">
+					<div class="toggle-group">
+						<button class="button -purple center" id="vega-btn">Vega</button>
+						<button class="button -gray center" id="vega-lite-btn">Vega-lite</button>
+					</div>
 				</div>
+				<button class="button -gray2 center" id="load-btn">Load file</button>
 			</div>
-			<button class="button -gray2 center" id="load-btn">Load file</button>
-		</div>
-		<div class="container">
-			<section class="main">
-				<div id="vis"></div>
-			</section>
+			<div class="container">
+				<section class="main">
+					<div id="vis"></div>
+				</section>
+			</div>
 		</div>
 		<script>
 			require('./viewer.js');

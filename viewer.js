@@ -87,6 +87,27 @@ vegaLiteBtn.addEventListener('click', () => {
   render();
 });
 
+const dropTarget = document.getElementById('drop-area');
+
+dropTarget.ondragover = function(e){
+  if(dropTarget.className.indexOf('landing')===-1) {
+    dropTarget.className += ' landing';
+  }
+  return false;
+};
+dropTarget.ondragleave = function(e){
+  dropTarget.className = dropTarget.className.replace('landing', '');
+  return false;
+};
+dropTarget.ondrop = function(e){
+  e.preventDefault();
+
+  dropTarget.className = dropTarget.className.replace('landing', '');
+  file = e.dataTransfer.files[0];
+  readFile(file.path);
+  return false;
+};
+
 // window.addEventListener('resize', ()=>{
 //     "width": document.documentElement.clientWidth - 40 - 10,
 //     "height": document.documentElement.clientHeight - 40 - 10,
