@@ -19,7 +19,7 @@ function readFile(filepath){
       return;
     }
 
-    document.title = `Vega View - ${filepath}`;
+    document.title = `Vega Desktop - ${filepath}`;
 
     try {
       const rawSpec = JSON.parse(data);
