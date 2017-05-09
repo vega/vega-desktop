@@ -1,10 +1,10 @@
 {
-  "name": "vega-view",
-  "productName": "VegaView",
+  "name": "vega-desktop",
+  "productName": "VegaDesktop",
   "version": "0.0.0",
-  "description": "My stunning app",
+  "description": "App for viewing visualizations created in Vega or Vega-lite",
   "license": "MIT",
-  "repository": "kristw/vega-view",
+  "repository": "kristw/vega-desktop",
   "author": {
     "name": "Krist Wongsuphasawat",
     "email": "krist.wongz@gmail.com",
@@ -44,6 +44,6 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/kristw/vega-view/issues"
+    "url": "https://github.com/kristw/vega-desktop/issues"
   }
 }

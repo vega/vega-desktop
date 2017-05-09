@@ -1,4 +1,4 @@
-# vega-view
+# Vega-Desktop
 
 > App for viewing visualizations created in Vega or Vega-lite
 
