@@ -132,7 +132,7 @@ body {
   height: 100%;
 }
 
-#vis {
+.inner-container {
   text-align: center;
   position: absolute;
   padding-top: 74px;
@@ -141,4 +141,11 @@ body {
   right: 10px;
   bottom: 10px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  align-content: stretch;
+}
+
+#vis {
+  width: 100%;
 }
