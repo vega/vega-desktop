@@ -18,6 +18,11 @@ const state = {
 
 const vegaBtn = document.getElementById('vega-btn');
 const vegaLiteBtn = document.getElementById('vega-lite-btn');
+const vis = document.getElementById('vis');
+
+function showError(msg) {
+  vis.innerHTML = msg;
+}
 
 function updateFormatButtons() {
   switch(state.mode) {
@@ -73,22 +78,35 @@ function render() {
   const spec = state.spec;
   if(spec) {
     let vegaSpec;
+
+    if (state.mode === FORMAT.VEGA_LITE) {
+      try {
+        vegaSpec = vl.compile(spec).spec;
+      } catch (ex) {
+        showError(`Invalid vega-lite spec: ${ex.message}`);
+        return;
+      }
+    } else if (state.mode === FORMAT.UNKNOWN) {
+      try {
+        vegaSpec = vl.compile(spec).spec;
+      } catch (ex) {
+        vegaSpec = spec;
+      }
+    } else {
+      vegaSpec = spec;
+    }
+
+    vis.innerHTML = '';
     try {
-      vegaSpec = state.mode==='vega' ? spec : vl.compile(spec).spec;
-      vis.innerHTML = '';
-      vg.parse.spec(vegaSpec, (error, chart) => {
-        state.vis = chart({ el: '#vis' }).update();
-      });
+      const runtime = vg.parse(vegaSpec);
+      const view = new vg.View(runtime)
+        .initialize(vis)
+        .hover()
+        .run();
     } catch (ex) {
-      showError(`Invalid spec for ${state.mode}`);
+      showError(`Invalid vega spec: ${ex.message}`);
     }
   }
-}
-
-const vis = document.getElementById('vis');
-
-function showError(msg) {
-  vis.innerHTML = msg;
 }
 
 LoadDialog(document.getElementById('load-btn'), readFile, showError);

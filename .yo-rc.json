@@ -2,7 +2,7 @@
   "generator-summon": {
     "summon:github": {
       "use-summon:github": true,
-      "name": "vega-view",
+      "name": "vega-desktop",
       "githubAccount": "kristw"
     }
   }
