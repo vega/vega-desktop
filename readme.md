@@ -2,7 +2,7 @@
 
 > App for viewing visualizations created in Vega or Vega-lite
 
-![Vega-Desktop][images/v1.0.0.gif]
+![Vega-Desktop](images/v1.0.0.gif)
 
 ## Dev
 
