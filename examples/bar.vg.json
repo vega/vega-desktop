@@ -3,7 +3,6 @@
   "width": 400,
   "height": 200,
   "padding": { "left": 5, "right": 5, "top": 5, "bottom": 5 },
-
   "data": [
     {
       "name": "table",

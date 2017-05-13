@@ -12,9 +12,9 @@ const vl = require('vega-lite');
 const state = {
   mode: 'vega',
   filepath: null,
-  spec: null,
-  vis: null,
+  spec: null
 };
+let view = null;
 
 const vegaBtn = document.getElementById('vega-btn');
 const vegaLiteBtn = document.getElementById('vega-lite-btn');
@@ -99,7 +99,10 @@ function render() {
     vis.innerHTML = '';
     try {
       const runtime = vg.parse(vegaSpec);
-      const view = new vg.View(runtime)
+      if (view) {
+        view.finalize();
+      }
+      view = new vg.View(runtime)
         .initialize(vis)
         .hover()
         .run();
