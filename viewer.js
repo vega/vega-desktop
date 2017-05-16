@@ -1,5 +1,6 @@
-const fs = require('fs');
+const app = require('electron').remote;
 
+const fs = require('fs');
 const helper = require('./viewer/helper.js');
 const FORMAT = helper.FORMAT;
 
@@ -52,15 +53,15 @@ vegaLiteBtn.addEventListener('click', () => {
   render();
 });
 
-function readFile(filepath){
-  fs.readFile(filepath, 'utf-8', function (err, data) {
+function readFile(filePath){
+  fs.readFile(filePath, 'utf-8', function (err, data) {
     if(err){
       alert('An error occurred reading the file :' + err.message);
       return;
     }
 
-    document.title = `Vega Desktop - ${filepath}`;
-    state.mode = helper.getFormatFromFileName(filepath);
+    document.title = `Vega Desktop - ${filePath}`;
+    state.mode = helper.getFormatFromFileName(filePath);
 
     try {
       state.spec = JSON.parse(data);
@@ -114,3 +115,8 @@ function render() {
 
 LoadDialog(document.getElementById('load-btn'), readFile, showError);
 DragAndDrop(document.getElementById('drop-area'), readFile);
+
+if (app.getCurrentWindow().extraInfo.filePath) {
+  console.log('fp', app.getCurrentWindow().extraInfo.filePath);
+  readFile(app.getCurrentWindow().extraInfo.filePath);
+}

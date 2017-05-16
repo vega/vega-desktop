@@ -15,11 +15,15 @@ function onClosed() {
 	mainWindow = null;
 }
 
-function createMainWindow() {
+function createMainWindow(filePath) {
 	const win = new electron.BrowserWindow({
 		width: 800,
 		height: 600
 	});
+
+	win.extraInfo = {
+		filePath: filePath || null
+	};
 
   // and load the index.html of the app.
   win.loadURL(url.format({
@@ -37,6 +41,11 @@ app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') {
 		app.quit();
 	}
+});
+
+app.on('open-file', (event, path) => {
+  event.preventDefault();
+  createMainWindow(filePath);
 });
 
 app.on('activate', () => {
