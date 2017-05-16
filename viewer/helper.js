@@ -21,7 +21,7 @@ function getFormatFromSpec(spec) {
     if(spec.$schema.indexOf('https://vega.github.io/schema/vega-lite') > -1) {
       return FORMAT.VEGA_LITE;
     } else if (spec.$schema.indexOf('https://vega.github.io/schema/vega') > -1) {
-      return FORMAT.VEGA
+      return FORMAT.VEGA;
     }
   }
   return FORMAT.UNKNOWN;
