@@ -2,8 +2,6 @@
 
 > App for viewing visualizations created in Vega or Vega-lite
 
-![Vega-Desktop](images/v1.0.0.gif)
-
 **Download:**
 [Mac OS X](https://drive.google.com/open?id=0B3gNKxO3XU4dVUprd0VSZUEyUWM) |
 [Windows x32](https://drive.google.com/open?id=0B3gNKxO3XU4dM0h0XzA1X1pnMkk) |
@@ -11,6 +9,8 @@
 [Linux x32](https://drive.google.com/open?id=0B3gNKxO3XU4dWFdfaU52RFVXMFk) |
 [Linux x64](https://drive.google.com/open?id=0B3gNKxO3XU4dTVcyWk1Nd0JMekU) |
 [Linux armv7l](https://drive.google.com/open?id=0B3gNKxO3XU4dY0dEOGluakNEa1E)
+
+![Vega-Desktop](images/v1.0.0.gif)
 
 #### Features
 
