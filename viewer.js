@@ -1,4 +1,4 @@
-const app = require('electron').remote;
+const { remote } = require('electron');
 
 const fs = require('fs');
 const helper = require('./viewer/helper.js');
@@ -116,7 +116,7 @@ function render() {
 LoadDialog(document.getElementById('load-btn'), readFile, showError);
 DragAndDrop(document.getElementById('drop-area'), readFile);
 
-if (app.getCurrentWindow().extraInfo.filePath) {
-  console.log('fp', app.getCurrentWindow().extraInfo.filePath);
-  readFile(app.getCurrentWindow().extraInfo.filePath);
+const incomingFilePath = remote.getCurrentWindow().extraInfo.filePath;
+if (incomingFilePath) {
+  readFile(incomingFilePath);
 }

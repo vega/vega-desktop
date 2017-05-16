@@ -1,5 +1,5 @@
-const app = require('electron').remote;
-const dialog = app.dialog;
+const { remote } = require('electron');
+const dialog = remote.dialog;
 
 module.exports = function(element, onLoad, onError) {
   return element.addEventListener('click', () => {
