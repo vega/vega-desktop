@@ -1,5 +1,4 @@
-const electron = require('electron');
-const app = electron.app;
+const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const url = require('url');
 
@@ -7,16 +6,19 @@ const url = require('url');
 require('electron-debug')({ showDevTools: true });
 
 // prevent window being garbage collected
-let mainWindow;
+const appWindows = [];
+const fileQueue = [];
 
-function onClosed() {
+function onClosed(win) {
 	// dereference the window
-	// for multiple windows store them in an array
-	mainWindow = null;
+	return () => {
+		const index = appWindows.indexOf(win);
+		appWindows.splice(index, 1);
+	};
 }
 
-function createMainWindow(filePath) {
-	const win = new electron.BrowserWindow({
+function createAppWindow(filePath) {
+	const win = new BrowserWindow({
 		width: 800,
 		height: 600
 	});
@@ -32,8 +34,8 @@ function createMainWindow(filePath) {
     slashes: true
   }));
 
-	win.on('closed', onClosed);
-
+	win.on('closed', onClosed(win));
+	appWindows.push(win);
 	return win;
 }
 
@@ -45,15 +47,22 @@ app.on('window-all-closed', () => {
 
 app.on('open-file', (event, path) => {
   event.preventDefault();
-  createMainWindow(filePath);
+	if (app.isReady()) {
+		createAppWindow(path);
+	} else {
+		fileQueue.push(path);
+	}
 });
 
 app.on('activate', () => {
   // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.	if (!mainWindow) {
-	mainWindow = createMainWindow();
+  // dock icon is clicked and there are no other windows open.
+	if (appWindows.length === 0) {
+		createAppWindow();
+	}
 });
 
 app.on('ready', () => {
-	mainWindow = createMainWindow();
+	const filePath = fileQueue.length > 0 ? fileQueue.shift() : null;
+	createAppWindow(filePath);
 });
