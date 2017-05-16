@@ -1,3 +1,7 @@
+# v1.1.0
+
+Can use as a default app to open file .vl.json and .vg.json.
+
 # v1.0.0
 
 First version. Can read both vega and vega-lite files.
