@@ -18,6 +18,7 @@
 - Can determine the file format if the extension is `*.vg.json` or `*.vl.json`.
 - If the extension is just `*.json`, will check for `$schema` field in the JSON spec.
 - Otherwise will try to parse as vega-lite, then vega.
+- It will load external data files relative to the spec files directory.
 
 You also can set your OS to have `*.vg.json` or `*.vl.json` opened with vega-desktop by default.
 
