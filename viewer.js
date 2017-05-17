@@ -1,6 +1,7 @@
 const { remote } = require('electron');
 
 const fs = require('fs');
+const path = require('path');
 const helper = require('./viewer/helper.js');
 const FORMAT = helper.FORMAT;
 
@@ -12,7 +13,7 @@ const vl = require('vega-lite');
 
 const state = {
   mode: 'vega',
-  filepath: null,
+  filePath: null,
   spec: null
 };
 let view = null;
@@ -61,6 +62,7 @@ function readFile(filePath){
     }
 
     document.title = `Vega Desktop - ${filePath}`;
+    state.filePath = filePath;
     state.mode = helper.getFormatFromFileName(filePath);
 
     try {
@@ -76,18 +78,18 @@ function readFile(filePath){
 }
 
 function render() {
-  const spec = state.spec;
+  const { spec, mode, filePath } = state;
   if(spec) {
     let vegaSpec;
 
-    if (state.mode === FORMAT.VEGA_LITE) {
+    if (mode === FORMAT.VEGA_LITE) {
       try {
         vegaSpec = vl.compile(spec).spec;
       } catch (ex) {
         showError(`Invalid vega-lite spec: ${ex.message}`);
         return;
       }
-    } else if (state.mode === FORMAT.UNKNOWN) {
+    } else if (mode === FORMAT.UNKNOWN) {
       try {
         vegaSpec = vl.compile(spec).spec;
       } catch (ex) {
@@ -103,7 +105,15 @@ function render() {
       if (view) {
         view.finalize();
       }
-      view = new vg.View(runtime)
+
+      // Tell loader to resolve data and image files
+      // relative to the spec file
+      const loader = new vg.loader({
+        baseURL: path.dirname(filePath),
+        mode: 'file'
+      });
+
+      view = new vg.View(runtime, { loader })
         .initialize(vis)
         .hover()
         .run();
