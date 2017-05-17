@@ -39,30 +39,28 @@ function createAppWindow(filePath) {
   return win;
 }
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
-});
-
-app.on('open-file', (event, path) => {
-  event.preventDefault();
-  if (app.isReady()) {
-    createAppWindow(path);
-  } else {
-    fileQueue.push(path);
-  }
-});
-
-app.on('activate', () => {
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (appWindows.length === 0) {
-    createAppWindow();
-  }
-});
-
-app.on('ready', () => {
-  const filePath = fileQueue.length > 0 ? fileQueue.shift() : null;
-  createAppWindow(filePath);
-});
+app
+  .on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {
+      app.quit();
+    }
+  })
+  .on('open-file', (event, path) => {
+    event.preventDefault();
+    if (app.isReady()) {
+      createAppWindow(path);
+    } else {
+      fileQueue.push(path);
+    }
+  })
+  .on('activate', () => {
+    // On OS X it's common to re-create a window in the app when the
+    // dock icon is clicked and there are no other windows open.
+    if (appWindows.length === 0) {
+      createAppWindow();
+    }
+  })
+  .on('ready', () => {
+    const filePath = fileQueue.length > 0 ? fileQueue.shift() : null;
+    createAppWindow(filePath);
+  });

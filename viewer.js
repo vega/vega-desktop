@@ -1,15 +1,13 @@
 const { remote } = require('electron');
-
 const fs = require('fs');
 const path = require('path');
-const helper = require('./viewer/helper.js');
-const FORMAT = helper.FORMAT;
-
-const DragAndDrop = require('./viewer/DragAndDrop.js');
-const LoadDialog = require('./viewer/LoadDialog.js');
-
 const vg = require('vega');
 const vl = require('vega-lite');
+
+const helper = require('./viewer/helper.js');
+const FORMAT = helper.FORMAT;
+const DragAndDrop = require('./viewer/DragAndDrop.js');
+const LoadDialog = require('./viewer/LoadDialog.js');
 
 const state = {
   mode: 'vega',
@@ -99,12 +97,14 @@ function render() {
       vegaSpec = spec;
     }
 
+    // Clear existing view
+    if (view) {
+      view.finalize();
+    }
     vis.innerHTML = '';
+
     try {
       const runtime = vg.parse(vegaSpec);
-      if (view) {
-        view.finalize();
-      }
 
       // Tell loader to resolve data and image files
       // relative to the spec file

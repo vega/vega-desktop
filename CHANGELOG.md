@@ -1,3 +1,7 @@
+# v1.2.0
+
+Can load data files relative to the spec file.
+
 # v1.1.0
 
 Can use as a default app to open file .vl.json and .vg.json.
