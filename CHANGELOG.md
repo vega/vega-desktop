@@ -1,6 +1,18 @@
+# v1.2.1
+
+Use `vega-schema-url-parser` instead of manual parsing. [Issue #1](https://github.com/kristw/vega-desktop/issues/1)
+
 # v1.2.0
 
 Can load data files relative to the spec file.
+
+**Download:**
+[Mac OS X](https://drive.google.com/open?id=0B3gNKxO3XU4dYjNwckZMb1NtU2M) |
+[Windows x32](https://drive.google.com/open?id=0B3gNKxO3XU4dWGhjb09Fbzl1LVU) |
+[Windows x64](https://drive.google.com/open?id=0B3gNKxO3XU4dTVNOSmd1aTNVUjg) |
+[Linux x32](https://drive.google.com/open?id=0B3gNKxO3XU4dS1hpUWRPbkd0cUU) |
+[Linux x64](https://drive.google.com/open?id=0B3gNKxO3XU4dQUdVU2JjZWJVcDg) |
+[Linux armv7l](https://drive.google.com/open?id=0B3gNKxO3XU4dLXFaS01BLURrOVE)
 
 # v1.1.0
 
