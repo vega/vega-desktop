@@ -20,7 +20,7 @@ acorn@^1.0.3:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-1.2.2.tgz#c8ce27de0acc76d896d2b1fad3df588d9e82f014"
 
-acorn@^3.0.4, acorn@^3.1.0:
+acorn@^3.0.4:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
 
@@ -751,7 +751,7 @@ electron-osx-sign@^0.4.1:
     plist "^2.0.1"
     tempfile "^1.1.1"
 
-electron-packager@^8.0.0:
+electron-packager@^8.7.0:
   version "8.7.0"
   resolved "https://registry.yarnpkg.com/electron-packager/-/electron-packager-8.7.0.tgz#3a2b82219f0046b48130ccfc26764f149de7b9d2"
   dependencies:
@@ -1001,14 +1001,7 @@ eslint@^3.18.0:
     text-table "~0.2.0"
     user-home "^2.0.0"
 
-espree@^3.1.3:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/espree/-/espree-3.1.4.tgz#0726d7ac83af97a7c8498da9b363a3609d2a68a1"
-  dependencies:
-    acorn "^3.1.0"
-    acorn-jsx "^3.0.0"
-
-espree@^3.4.0:
+espree@^3.1.3, espree@^3.4.0:
   version "3.4.3"
   resolved "https://registry.yarnpkg.com/espree/-/espree-3.4.3.tgz#2910b5ccd49ce893c2ffffaab4fd8b3a31b82374"
   dependencies:
@@ -3013,6 +3006,10 @@ vega-scenegraph@>=2.0.0-beta, vega-scenegraph@>=2.0.0-beta.11:
     vega-util "^1.1"
   optionalDependencies:
     canvas "^1.6"
+
+vega-schema-url-parser@^1.0.0-beta.2:
+  version "1.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/vega-schema-url-parser/-/vega-schema-url-parser-1.0.0-beta.2.tgz#0a9ff04b348b8d1a514226e2f8ca81dfad72579b"
 
 vega-statistics@1:
   version "1.1.2"

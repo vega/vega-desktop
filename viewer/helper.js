@@ -1,3 +1,5 @@
+const vegaSchemaUrlParser = require('vega-schema-url-parser').default;
+
 const FORMAT = {
   VEGA: 'vega',
   VEGA_LITE: 'vega-lite',
@@ -18,9 +20,10 @@ function getFormatFromFileName(fileName) {
 
 function getFormatFromSpec(spec) {
   if(spec.$schema) {
-    if(spec.$schema.indexOf('https://vega.github.io/schema/vega-lite') > -1) {
+    const { library } = vegaSchemaUrlParser(spec.$schema);
+    if (library === 'vega-lite') {
       return FORMAT.VEGA_LITE;
-    } else if (spec.$schema.indexOf('https://vega.github.io/schema/vega') > -1) {
+    } else if (library === 'vega') {
       return FORMAT.VEGA;
     }
   }
