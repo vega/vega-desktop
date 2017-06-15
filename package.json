@@ -26,9 +26,10 @@
     "electron"
   ],
   "dependencies": {
+    "chokidar": "^1.7.0",
     "electron-debug": "^1.0.0",
-    "vega": "^3.0.0-beta.30",
-    "vega-lite": "^2.0.0-beta.2",
+    "vega": "^3.0.0-beta.34",
+    "vega-lite": "^2.0.0-beta.4",
     "vega-schema-url-parser": "^1.0.0-beta.2"
   },
   "devDependencies": {
