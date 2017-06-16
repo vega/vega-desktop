@@ -5,6 +5,8 @@ const url = require('url');
 // adds debug features like hotkeys for triggering dev tools and reload
 require('electron-debug')({ showDevTools: true });
 
+require('electron-context-menu')();
+
 // prevent window being garbage collected
 const appWindows = [];
 const fileQueue = [];

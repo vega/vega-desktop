@@ -93,17 +93,6 @@ body {
   opacity: 1;
 }
 
-.button.-gray2 {
-  color: #202129;
-  background-color: #ddd;
-  opacity: 1;
-}
-.button.-gray2:hover {
-  color: #202129;
-  background-color: #d5d6d6;
-  opacity: 1;
-}
-
 .button.-gold {
   color: #f4f7f7;
   background: #D5A928;

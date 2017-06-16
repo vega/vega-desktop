@@ -1,3 +1,12 @@
+# v1.3.0
+
+Add "Watch Mode".
+
+1. Open the file in `vega-desktop` and enable watch.
+2. Then use any preferred editor to modify the vega json file.
+3. Save.
+4. See changes appear in `vega-desktop` automatically.
+
 # v1.2.1
 
 Use `vega-schema-url-parser` instead of manual parsing. [Issue #1](https://github.com/kristw/vega-desktop/issues/1)

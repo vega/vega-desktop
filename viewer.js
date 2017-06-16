@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const vg = require('vega');
 const vl = require('vega-lite');
+const chokidar = require('chokidar');
 
 const helper = require('./viewer/helper.js');
 const FORMAT = helper.FORMAT;
@@ -12,10 +13,13 @@ const LoadDialog = require('./viewer/LoadDialog.js');
 const state = {
   mode: 'vega',
   filePath: null,
-  spec: null
+  spec: null,
+  watching: false,
 };
 let view = null;
+let watcher = null;
 
+const watchBtn = document.getElementById('watch-btn');
 const vegaBtn = document.getElementById('vega-btn');
 const vegaLiteBtn = document.getElementById('vega-lite-btn');
 const vis = document.getElementById('vis');
@@ -24,7 +28,13 @@ function showError(msg) {
   vis.innerHTML = msg;
 }
 
-function updateFormatButtons() {
+function updateButtons() {
+  if (state.watching) {
+    watchBtn.className = 'button -gold center';
+  } else {
+    watchBtn.className = 'button -gray center';
+  }
+
   switch(state.mode) {
     case FORMAT.VEGA:
       vegaBtn.className = 'button -purple center';
@@ -40,17 +50,51 @@ function updateFormatButtons() {
   }
 }
 
+watchBtn.addEventListener('click', () => {
+  if (state.watching) {
+    unwatch();
+  } else {
+    watch(state.filePath);
+  }
+  state.watching = !state.watching;
+  updateButtons();
+})
+
 vegaBtn.addEventListener('click', () => {
   state.mode = FORMAT.VEGA;
-  updateFormatButtons();
+  updateButtons();
   render();
 });
 
 vegaLiteBtn.addEventListener('click', () => {
   state.mode = FORMAT.VEGA_LITE;
-  updateFormatButtons();
+  updateButtons();
   render();
 });
+
+function watch(filePath) {
+  if (filePath) {
+    unwatch();
+    watcher = chokidar.watch(filePath)
+      .on('change', () => {
+        readFile(filePath);
+      });
+  }
+}
+
+function unwatch() {
+  if (watcher) {
+    watcher.close();
+    watcher = null;
+  }
+}
+
+function handleFile(filePath) {
+  readFile(filePath);
+  if (state.watching) {
+    watch(filePath);
+  }
+}
 
 function readFile(filePath){
   fs.readFile(filePath, 'utf-8', function (err, data) {
@@ -71,7 +115,7 @@ function readFile(filePath){
       showError(`Error: ${ex.message}`);
     }
 
-    updateFormatButtons();
+    updateButtons();
   });
 }
 
@@ -123,10 +167,10 @@ function render() {
   }
 }
 
-LoadDialog(document.getElementById('load-btn'), readFile, showError);
-DragAndDrop(document.getElementById('drop-area'), readFile);
+LoadDialog(document.getElementById('load-btn'), handleFile, showError);
+DragAndDrop(document.getElementById('drop-area'), handleFile);
 
 const incomingFilePath = remote.getCurrentWindow().extraInfo.filePath;
 if (incomingFilePath) {
-  readFile(incomingFilePath);
+  handleFile(incomingFilePath);
 }
