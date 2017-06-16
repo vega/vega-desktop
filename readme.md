@@ -3,12 +3,12 @@
 > App for viewing visualizations created in Vega or Vega-lite
 
 **Download:**
-[Mac OS X](https://drive.google.com/open?id=0B3gNKxO3XU4dX1cwUks1Y2hXTk0) |
-[Windows x32](https://drive.google.com/open?id=0B3gNKxO3XU4dMkRTVFRRQ09BTDA) |
-[Windows x64](https://drive.google.com/open?id=0B3gNKxO3XU4dbldwQW5PaVlQeTA) |
-[Linux x32](https://drive.google.com/open?id=0B3gNKxO3XU4dRll2Z0VXU3lfZmc) |
-[Linux x64](https://drive.google.com/open?id=0B3gNKxO3XU4dMHFPOW1UeEFwX2M) |
-[Linux armv7l](https://drive.google.com/open?id=0B3gNKxO3XU4da2RtYnc3YW1oS1E)
+[Mac OS X](https://drive.google.com/open?id=0B3gNKxO3XU4dYS1VSG9KNnZydVU) |
+[Windows x32](https://drive.google.com/open?id=0B3gNKxO3XU4dLVR2QVZxeEdsM0E) |
+[Windows x64](https://drive.google.com/open?id=0B3gNKxO3XU4dVlZoSzdVTHdWeU0) |
+[Linux x32](https://drive.google.com/open?id=0B3gNKxO3XU4dR3Bfa291ZXprZDA) |
+[Linux x64](https://drive.google.com/open?id=0B3gNKxO3XU4dWE5maUlZX2pZNnc) |
+[Linux armv7l](https://drive.google.com/open?id=0B3gNKxO3XU4dVDRnYUJiVkotdmc)
 
 ![Vega-Desktop](images/v1.0.0.gif)
 
@@ -25,12 +25,12 @@ You also can set your OS to have `*.vg.json` or `*.vl.json` opened with vega-des
 ![Open files with vega-desktop](images/open_with.png)
 
 **Download:**
-[Mac OS X](https://drive.google.com/open?id=0B3gNKxO3XU4dX1cwUks1Y2hXTk0) |
-[Windows x32](https://drive.google.com/open?id=0B3gNKxO3XU4dMkRTVFRRQ09BTDA) |
-[Windows x64](https://drive.google.com/open?id=0B3gNKxO3XU4dbldwQW5PaVlQeTA) |
-[Linux x32](https://drive.google.com/open?id=0B3gNKxO3XU4dRll2Z0VXU3lfZmc) |
-[Linux x64](https://drive.google.com/open?id=0B3gNKxO3XU4dMHFPOW1UeEFwX2M) |
-[Linux armv7l](https://drive.google.com/open?id=0B3gNKxO3XU4da2RtYnc3YW1oS1E)
+[Mac OS X](https://drive.google.com/open?id=0B3gNKxO3XU4dYS1VSG9KNnZydVU) |
+[Windows x32](https://drive.google.com/open?id=0B3gNKxO3XU4dLVR2QVZxeEdsM0E) |
+[Windows x64](https://drive.google.com/open?id=0B3gNKxO3XU4dVlZoSzdVTHdWeU0) |
+[Linux x32](https://drive.google.com/open?id=0B3gNKxO3XU4dR3Bfa291ZXprZDA) |
+[Linux x64](https://drive.google.com/open?id=0B3gNKxO3XU4dWE5maUlZX2pZNnc) |
+[Linux armv7l](https://drive.google.com/open?id=0B3gNKxO3XU4dVDRnYUJiVkotdmc)
 
 ## Dev
 

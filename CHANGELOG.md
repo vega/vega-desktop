@@ -11,6 +11,14 @@ Add "Watch Mode".
 
 Use `vega-schema-url-parser` instead of manual parsing. [Issue #1](https://github.com/kristw/vega-desktop/issues/1)
 
+**Download:**
+[Mac OS X](https://drive.google.com/open?id=0B3gNKxO3XU4dX1cwUks1Y2hXTk0) |
+[Windows x32](https://drive.google.com/open?id=0B3gNKxO3XU4dMkRTVFRRQ09BTDA) |
+[Windows x64](https://drive.google.com/open?id=0B3gNKxO3XU4dbldwQW5PaVlQeTA) |
+[Linux x32](https://drive.google.com/open?id=0B3gNKxO3XU4dRll2Z0VXU3lfZmc) |
+[Linux x64](https://drive.google.com/open?id=0B3gNKxO3XU4dMHFPOW1UeEFwX2M) |
+[Linux armv7l](https://drive.google.com/open?id=0B3gNKxO3XU4da2RtYnc3YW1oS1E)
+
 # v1.2.0
 
 Can load data files relative to the spec file.
