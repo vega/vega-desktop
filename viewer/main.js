@@ -5,10 +5,10 @@ const vg = require('vega');
 const vl = require('vega-lite');
 const chokidar = require('chokidar');
 
-const helper = require('./viewer/helper.js');
+const helper = require('./helper.js');
 const FORMAT = helper.FORMAT;
-const DragAndDrop = require('./viewer/DragAndDrop.js');
-const LoadDialog = require('./viewer/LoadDialog.js');
+const DragAndDrop = require('./DragAndDrop.js');
+const LoadDialog = require('./LoadDialog.js');
 
 const state = {
   mode: 'vega',
@@ -174,3 +174,12 @@ const incomingFilePath = remote.getCurrentWindow().extraInfo.filePath;
 if (incomingFilePath) {
   handleFile(incomingFilePath);
 }
+
+import ReactDOM from 'react-dom';
+import React from 'react';
+import App from './App.jsx';
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+);

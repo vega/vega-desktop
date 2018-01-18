@@ -35,14 +35,14 @@ You also can set your OS to have `*.vg.json` or `*.vl.json` opened with vega-des
 ## Dev
 
 ```bash
-$ yarn install
-$ npm start
+yarn install
+npm start
 ```
 
 ### Build
 
-```
-$ npm run build
+```bash
+npm run build
 ```
 
 Builds the app for OS X, Linux, and Windows, using [electron-packager](https://github.com/electron-userland/electron-packager).
