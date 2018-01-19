@@ -1,3 +1,7 @@
+# v1.4.0
+
+Migrate from plain javascript to React
+
 # v1.3.0
 
 Add "Watch Mode".

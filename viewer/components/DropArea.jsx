@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const propTypes = {
   className: PropTypes.string,
@@ -9,6 +10,16 @@ const defaultProps = {
   className: '',
   onLoad() {},
 };
+
+const Div = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all .2s;
+  background-color: ${props => props.isOver ? '#D0A645' : 'none'}
+`;
 
 class DropArea extends React.Component {
   constructor(props) {
@@ -23,8 +34,9 @@ class DropArea extends React.Component {
     const { isOver } = this.state;
 
     return (
-      <div
-        className={`${className} drop-area ${isOver ? 'landing': ''}`}
+      <Div
+        isOver={isOver}
+        className={className}
         onDragOver={() => {
           this.setState({ isOver: true });
           return false;
@@ -43,7 +55,7 @@ class DropArea extends React.Component {
         }}
       >
         {children}
-      </div>
+      </Div>
     );
   }
 }

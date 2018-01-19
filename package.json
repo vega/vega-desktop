@@ -8,7 +8,7 @@
   "author": {
     "name": "Krist Wongsuphasawat",
     "email": "krist.wongz@gmail.com",
-    "url": "kristw.yellowpigz.com"
+    "url": "http://kristw.yellowpigz.com"
   },
   "scripts": {
     "test": "xo",

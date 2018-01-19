@@ -9,19 +9,6 @@ body {
   width: 100%;
 }
 
-.drop-area {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: all .2s;
-}
-
-.drop-area.landing {
-  background-color: #D0A645;
-}
-
 .menubar {
   background-color: #eee;
   padding: 5px;
