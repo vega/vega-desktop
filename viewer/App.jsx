@@ -4,8 +4,7 @@ import path from 'path';
 import React from 'react';
 import PropTypes from 'prop-types';
 import DropArea from './components/DropArea';
-import { FORMAT } from './utils/helper';
-import readVegaFile from './utils/readVegaFile';
+import { FORMAT, readVegaFile } from './utils/helper';
 import showOpenDialog from './utils/showOpenDialog';
 import VegaRenderer from './components/VegaRenderer';
 
