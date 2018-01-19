@@ -9,7 +9,7 @@ body {
   width: 100%;
 }
 
-#drop-area {
+.drop-area {
   position: absolute;
   top: 0;
   left: 0;
@@ -17,7 +17,8 @@ body {
   bottom: 0;
   transition: all .2s;
 }
-#drop-area.landing {
+
+.drop-area.landing {
   background-color: #D0A645;
 }
 
@@ -29,7 +30,7 @@ body {
   z-index: 100;
 }
 
-.button {
+button {
   display: inline-block;
   overflow: hidden;
   margin: 10px;
@@ -55,50 +56,50 @@ body {
   align-items: center;
   flex: 0 0 160px;
 }
-.button:hover {
+button:hover {
   transition: all 60ms ease;
   opacity: .85;
 }
-.button:active {
+button:active {
   transition: all 60ms ease;
   opacity: .75;
 }
-.button:focus {
+button:focus {
   outline: 1px dotted #959595;
   outline-offset: -4px;
 }
 
-.button.-regular {
+button.-regular {
   color: #202129;
   background-color: #edeeee;
 }
-.button.-regular:hover {
+button.-regular:hover {
   color: #202129;
   background-color: #e1e2e2;
   opacity: 1;
 }
-.button.-regular:active {
+button.-regular:active {
   background-color: #d5d6d6;
   opacity: 1;
 }
 
-.button.-gray {
+button.-gray {
   color: #202129;
   background-color: #e1e2e2;
   opacity: 1;
 }
-.button.-gray:hover {
+button.-gray:hover {
   color: #202129;
   background-color: #d5d6d6;
   opacity: 1;
 }
 
-.button.-gold {
+button.-gold {
   color: #f4f7f7;
   background: #D5A928;
 }
 
-.button.-purple {
+button.-purple {
   color: #f4f7f7;
   background: #652C90;
 }
@@ -108,10 +109,10 @@ body {
   margin-right: 10px;
 }
 
-.toggle-group .button:first-child{
+.toggle-group button:first-child{
   margin-right: 0;
 }
-.toggle-group .button{
+.toggle-group button{
   float: left;
   margin-left: 0;
 }
@@ -135,6 +136,6 @@ body {
   align-content: stretch;
 }
 
-#vis {
+.vis {
   width: 100%;
 }
