@@ -1,4 +1,4 @@
-const vegaSchemaUrlParser = require('vega-schema-url-parser').default;
+import vegaSchemaUrlParser from 'vega-schema-url-parser';
 
 const FORMAT = {
   VEGA: 'vega',
@@ -18,7 +18,7 @@ function getFormatFromFileName(fileName) {
   return FORMAT.UNKNOWN;
 }
 
-function getFormatFromSpec(spec) {
+function getFormatFromSpec(spec, fallback = FORMAT.UNKNOWN) {
   if(spec.$schema) {
     const { library } = vegaSchemaUrlParser(spec.$schema);
     if (library === 'vega-lite') {
@@ -27,7 +27,7 @@ function getFormatFromSpec(spec) {
       return FORMAT.VEGA;
     }
   }
-  return FORMAT.UNKNOWN;
+  return fallback;
 }
 
 module.exports = {
