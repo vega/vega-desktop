@@ -21,7 +21,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       filePath: null,
-      mode: 'vega',
+      format: 'vega',
       watching: false,
       loading: false,
       spec: null,
@@ -65,7 +65,7 @@ class App extends React.Component {
         this.setState({
           loading: false,
           spec: data.spec,
-          mode: data.mode,
+          format: data.format,
         });
       },
       error => {
@@ -106,7 +106,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { mode, watching, spec, filePath } = this.state;
+    const { format, watching, spec, filePath } = this.state;
     const { className } = this.props;
 
     return (
@@ -119,17 +119,17 @@ class App extends React.Component {
           <div className="float-right">
             <div className="toggle-group">
               <button
-                className={mode === FORMAT.VEGA ? '-purple' : '-gray'}
+                className={format === FORMAT.VEGA ? '-purple' : '-gray'}
                 onClick={() => {
-                  this.setState({ mode: FORMAT.VEGA });
+                  this.setState({ format: FORMAT.VEGA });
                 }}
               >
                 Vega
               </button>
               <button
-                className={mode === FORMAT.VEGA_LITE ? '-purple' : '-gray'}
+                className={format === FORMAT.VEGA_LITE ? '-purple' : '-gray'}
                 onClick={() => {
-                  this.setState({ mode: FORMAT.VEGA_LITE });
+                  this.setState({ format: FORMAT.VEGA_LITE });
                 }}
               >
                 Vega-Lite
@@ -160,7 +160,7 @@ class App extends React.Component {
           <div className="inner-container">
             <VegaRenderer
               className="vis"
-              mode={mode}
+              format={format}
               spec={spec}
               filePath={filePath}
             />

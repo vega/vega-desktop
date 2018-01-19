@@ -9,13 +9,13 @@ export default function(filePath) {
         return;
       }
 
-      const modeFromFile = getFormatFromFileName(filePath);
+      const formatFromFile = getFormatFromFileName(filePath);
 
       try {
         const spec = JSON.parse(data);
         resolve({
           spec,
-          mode: getFormatFromSpec(spec, modeFromFile)
+          format: getFormatFromSpec(spec, formatFromFile)
         });
       } catch (ex) {
         reject(`Error: ${ex.message}`);

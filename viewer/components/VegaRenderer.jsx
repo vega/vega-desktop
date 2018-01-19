@@ -31,18 +31,18 @@ class VegaRenderer extends React.PureComponent {
   }
 
   update() {
-    const { spec, mode, filePath } = this.props;
+    const { spec, format, filePath } = this.props;
     if(spec) {
       let vegaSpec;
 
-      if (mode === FORMAT.VEGA_LITE) {
+      if (format === FORMAT.VEGA_LITE) {
         try {
           vegaSpec = vl.compile(spec).spec;
         } catch (ex) {
           this.showError(`Invalid vega-lite spec: ${ex.message}`);
           return;
         }
-      } else if (mode === FORMAT.UNKNOWN) {
+      } else if (format === FORMAT.UNKNOWN) {
         try {
           vegaSpec = vl.compile(spec).spec;
         } catch (ex) {
