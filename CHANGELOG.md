@@ -1,6 +1,7 @@
 # v1.4.0
 
-Migrate from plain javascript to React
+- Can export to `png` and `svg`
+- Migrate from plain javascript to React
 
 # v1.3.0
 

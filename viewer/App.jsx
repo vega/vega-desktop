@@ -159,7 +159,8 @@ class App extends React.Component {
               );
             }}
           >
-            Load...
+            <i className="fa fa-folder-open" aria-hidden="true" />
+            &nbsp;Load...
           </button>
           <button
             className={watching ? '-gold' : '-gray'}
@@ -167,7 +168,8 @@ class App extends React.Component {
               this.toggleWatch();
             }}
           >
-            Watch
+            <i className="fa fa-refresh" aria-hidden="true" />
+            &nbsp;Watch
           </button>
           <button
             className="-gray"
@@ -175,7 +177,8 @@ class App extends React.Component {
               this.exportFile('svg');
             }}
           >
-            Export SVG
+            <i className="fa fa-download" aria-hidden="true" />
+            &nbsp;SVG
           </button>
           <button
             className="-gray"
@@ -183,7 +186,8 @@ class App extends React.Component {
               this.exportFile('png');
             }}
           >
-            Export PNG
+            <i className="fa fa-download" aria-hidden="true" />
+            &nbsp;PNG
           </button>
         </div>
         <div className="container">
