@@ -7,9 +7,11 @@ const vl = require('vega-lite');
 
 const propTypes = {
   className: PropTypes.string,
+  renderer: PropTypes.string,
 };
 const defaultProps = {
   className: '',
+  renderer: 'canvas',
 };
 
 class VegaRenderer extends React.PureComponent {
@@ -26,12 +28,25 @@ class VegaRenderer extends React.PureComponent {
     this.update();
   }
 
+  exportFile(type) {
+    if (this.view) {
+      return this.view.toImageURL(type);
+    }
+    return Promise.reject('No input');
+  }
+
+  getImage() {
+    if (this.view) {
+
+    }
+  }
+
   showError(msg) {
     this.container.innerHTML = msg;
   }
 
   update() {
-    const { spec, format, filePath } = this.props;
+    const { spec, format, filePath, renderer } = this.props;
     if(spec) {
       let vegaSpec;
 
@@ -70,6 +85,7 @@ class VegaRenderer extends React.PureComponent {
 
         this.view = new vg.View(runtime, { loader })
           .initialize(this.container)
+          .renderer(renderer)
           .hover()
           .run();
       } catch (ex) {

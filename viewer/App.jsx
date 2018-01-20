@@ -5,8 +5,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DropArea from './components/DropArea';
 import { FORMAT, readVegaFile } from './utils/helper';
-import showOpenDialog from './utils/showOpenDialog';
+import { showOpenDialog, showSaveDialog } from './utils/dialog';
 import VegaRenderer from './components/VegaRenderer';
+import downloadURI from './utils/downloadURI';
 
 const propTypes = {
   className: PropTypes.string,
@@ -74,6 +75,20 @@ class App extends React.Component {
         });
       }
     )
+  }
+
+  exportFile(type) {
+    if (this.vega) {
+      this.vega.exportFile(type)
+        .then(
+          file => {
+            downloadURI(file, `snapshot.${type}`);
+          },
+          error => {
+            alert(error);
+          }
+        );
+    }
   }
 
   toggleWatch() {
@@ -144,7 +159,7 @@ class App extends React.Component {
               );
             }}
           >
-            Load file
+            Load...
           </button>
           <button
             className={watching ? '-gold' : '-gray'}
@@ -154,10 +169,27 @@ class App extends React.Component {
           >
             Watch
           </button>
+          <button
+            className="-gray"
+            onClick={() => {
+              this.exportFile('svg');
+            }}
+          >
+            Export SVG
+          </button>
+          <button
+            className="-gray"
+            onClick={() => {
+              this.exportFile('png');
+            }}
+          >
+            Export PNG
+          </button>
         </div>
         <div className="container">
           <div className="inner-container">
             <VegaRenderer
+              ref={c => { this.vega = c; }}
               className="vis"
               format={format}
               spec={spec}
