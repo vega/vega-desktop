@@ -35,12 +35,6 @@ class VegaRenderer extends React.PureComponent {
     return Promise.reject('No input');
   }
 
-  getImage() {
-    if (this.view) {
-
-    }
-  }
-
   showError(msg) {
     this.container.innerHTML = msg;
   }
