@@ -8,6 +8,9 @@ import { FORMAT, readVegaFile } from './utils/helper';
 import { showOpenDialog, showSaveDialog } from './utils/dialog';
 import VegaRenderer from './components/VegaRenderer';
 import downloadURI from './utils/downloadURI';
+import styled from 'styled-components';
+const vg = require('vega');
+const vl = require('vega-lite');
 
 const propTypes = {
   className: PropTypes.string,
@@ -15,6 +18,25 @@ const propTypes = {
 const defaultProps = {
   className: '',
 };
+
+const MenuBar =  styled.div`
+  background-color: #eee;
+  padding: 5px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+`
+
+const StatusBar = styled.div`
+  background-color: #efefef;
+  padding: 5px 8px;
+  font-size: 0.8em;
+  text-align: right;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+`
 
 class App extends React.Component {
   constructor(props) {
@@ -129,7 +151,7 @@ class App extends React.Component {
           this.handleFile(filePath);
         }}
       >
-        <div className="menubar">
+        <MenuBar>
           <div className="float-right">
             <div className="toggle-group">
               <button
@@ -189,7 +211,7 @@ class App extends React.Component {
             <i className="fa fa-download" aria-hidden="true" />
             &nbsp;PNG
           </button>
-        </div>
+        </MenuBar>
         <div className="container">
           <div className="inner-container">
             <VegaRenderer
@@ -201,6 +223,11 @@ class App extends React.Component {
             />
           </div>
         </div>
+        <StatusBar>
+          {format === FORMAT.VEGA_LITE
+            ? `Vega-Lite v${vl.version}`
+            : `Vega v${vg.version}`}
+        </StatusBar>
       </DropArea>
     );
   }

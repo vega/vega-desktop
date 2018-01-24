@@ -2,6 +2,7 @@
 
 - Can export to `png` and `svg`
 - Migrate from plain javascript to React
+- Show Vega and Vega-Lite version
 
 # v1.3.0
 
