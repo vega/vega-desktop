@@ -1,3 +1,7 @@
+# v1.4.1
+
+- Update `vega` and `vega-lite` version.
+
 # v1.4.0
 
 - Can export to `png` and `svg`
