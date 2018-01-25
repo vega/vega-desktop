@@ -4,6 +4,14 @@
 - Migrate from plain javascript to React
 - Show Vega and Vega-Lite version
 
+**Download:**
+[Mac OS X](https://goo.gl/3M7yAD) |
+[Windows x32](https://goo.gl/rHropo) |
+[Windows x64](https://goo.gl/TddfiD) |
+[Linux x32](https://goo.gl/4GWBaS) |
+[Linux x64](https://goo.gl/h5zHci) |
+[Linux armv7l](https://goo.gl/4Ri9oT)
+
 # v1.3.0
 
 Add "Watch Mode".
@@ -12,6 +20,14 @@ Add "Watch Mode".
 2. Then use any preferred editor to modify the vega json file.
 3. Save.
 4. See changes appear in `vega-desktop` automatically.
+
+**Download:**
+[Mac OS X](https://goo.gl/XVh72p) |
+[Windows x32](https://goo.gl/uWR6zp) |
+[Windows x64](https://goo.gl/UQW4pb) |
+[Linux x32](https://goo.gl/3ubjNT) |
+[Linux x64](https://goo.gl/bnDnMC) |
+[Linux armv7l](https://goo.gl/2kkuau)
 
 # v1.2.1
 
