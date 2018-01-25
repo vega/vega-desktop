@@ -2,6 +2,14 @@
 
 - Update `vega` and `vega-lite` version.
 
+**Download:**
+[Linux armv7l](https://goo.gl/8VEuXm) |
+[Linux x32](https://goo.gl/uNajxR) |
+[Linux x64](https://goo.gl/VWewhu) |
+[Mac OS X](https://goo.gl/FFSemx) |
+[Windows x32](https://goo.gl/kigTqS) |
+[Windows x64](https://goo.gl/i7hZ56)
+
 # v1.4.0
 
 - Can export to `png` and `svg`

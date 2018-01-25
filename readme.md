@@ -3,12 +3,12 @@
 > App for viewing visualizations created in Vega or Vega-lite
 
 **Download:**
-[Mac OS X](https://goo.gl/3M7yAD) |
-[Windows x32](https://goo.gl/rHropo) |
-[Windows x64](https://goo.gl/TddfiD) |
-[Linux x32](https://goo.gl/4GWBaS) |
-[Linux x64](https://goo.gl/h5zHci) |
-[Linux armv7l](https://goo.gl/4Ri9oT)
+[Linux armv7l](https://goo.gl/8VEuXm) |
+[Linux x32](https://goo.gl/uNajxR) |
+[Linux x64](https://goo.gl/VWewhu) |
+[Mac OS X](https://goo.gl/FFSemx) |
+[Windows x32](https://goo.gl/kigTqS) |
+[Windows x64](https://goo.gl/i7hZ56)
 
 ![Vega-Desktop](images/v1.0.0.gif)
 
@@ -26,12 +26,12 @@ You also can set your OS to have `*.vg.json` or `*.vl.json` opened with vega-des
 ![Open files with vega-desktop](images/open_with.png)
 
 **Download:**
-[Mac OS X](https://goo.gl/3M7yAD) |
-[Windows x32](https://goo.gl/rHropo) |
-[Windows x64](https://goo.gl/TddfiD) |
-[Linux x32](https://goo.gl/4GWBaS) |
-[Linux x64](https://goo.gl/h5zHci) |
-[Linux armv7l](https://goo.gl/4Ri9oT)
+[Linux armv7l](https://goo.gl/8VEuXm) |
+[Linux x32](https://goo.gl/uNajxR) |
+[Linux x64](https://goo.gl/VWewhu) |
+[Mac OS X](https://goo.gl/FFSemx) |
+[Windows x32](https://goo.gl/kigTqS) |
+[Windows x64](https://goo.gl/i7hZ56)
 
 ## Dev
 
