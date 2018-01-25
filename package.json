@@ -14,7 +14,8 @@
     "test": "xo",
     "start": "electron .",
     "build": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --platform=darwin --arch=all",
-    "build-all": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --all"
+    "build-all": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --all",
+    "zip": "sh ./zip.sh"
   },
   "files": [
     "index.js",
