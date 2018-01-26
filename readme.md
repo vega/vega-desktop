@@ -3,12 +3,12 @@
 > App for viewing visualizations created in Vega or Vega-lite
 
 **Download:**
-[Linux armv7l](https://goo.gl/kNS5fw) |
-[Linux x32](https://goo.gl/gVQUEc) |
-[Linux x64](https://goo.gl/dJEaYX) |
-[Mac OS X](https://goo.gl/RkwsDt) |
-[Windows x32](https://goo.gl/sDxanU) |
-[Windows x64](https://goo.gl/EUj33Y)
+[Linux armv7l](https://goo.gl/tTeWXV) |
+[Linux x32](https://goo.gl/CYtbLt) |
+[Linux x64](https://goo.gl/de9Bt6) |
+[Mac OS X](https://goo.gl/8z6SR3) |
+[Windows x32](https://goo.gl/6pYQ24) |
+[Windows x64](https://goo.gl/FuU8mY)
 
 ![Vega-Desktop](images/v1.4.2.png)
 ![Vega-Desktop](images/v1.0.0.gif)
