@@ -1,28 +1,16 @@
+# v1.4.2
+
+- Fix issue with electron-packager due to yarn node_modules hoisting.
+
 # v1.4.1
 
 - Update `vega` and `vega-lite` version.
-
-**Download:**
-[Linux armv7l](https://goo.gl/8VEuXm) |
-[Linux x32](https://goo.gl/uNajxR) |
-[Linux x64](https://goo.gl/VWewhu) |
-[Mac OS X](https://goo.gl/FFSemx) |
-[Windows x32](https://goo.gl/kigTqS) |
-[Windows x64](https://goo.gl/i7hZ56)
 
 # v1.4.0
 
 - Can export to `png` and `svg`
 - Migrate from plain javascript to React
 - Show Vega and Vega-Lite version
-
-**Download:**
-[Mac OS X](https://goo.gl/3M7yAD) |
-[Windows x32](https://goo.gl/rHropo) |
-[Windows x64](https://goo.gl/TddfiD) |
-[Linux x32](https://goo.gl/4GWBaS) |
-[Linux x64](https://goo.gl/h5zHci) |
-[Linux armv7l](https://goo.gl/4Ri9oT)
 
 # v1.3.0
 

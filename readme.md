@@ -25,18 +25,10 @@ You also can set your OS to have `*.vg.json` or `*.vl.json` opened with vega-des
 
 ![Open files with vega-desktop](images/open_with.png)
 
-**Download:**
-[Linux armv7l](https://goo.gl/8VEuXm) |
-[Linux x32](https://goo.gl/uNajxR) |
-[Linux x64](https://goo.gl/VWewhu) |
-[Mac OS X](https://goo.gl/FFSemx) |
-[Windows x32](https://goo.gl/kigTqS) |
-[Windows x64](https://goo.gl/i7hZ56)
-
 ## Dev
 
 ```bash
-yarn install
+npm install # yarn install has issue with electron-packager. Have to use npm install
 npm start
 ```
 
