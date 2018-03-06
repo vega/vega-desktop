@@ -1,3 +1,7 @@
+# v1.4.3
+
+- Update `vega` and `vega-lite` version.
+
 # v1.4.2
 
 - Fix issue with electron-packager due to yarn node_modules hoisting.
