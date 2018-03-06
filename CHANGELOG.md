@@ -6,6 +6,14 @@
 
 - Fix issue with electron-packager due to yarn node_modules hoisting.
 
+**Download:**
+[Linux armv7l](https://goo.gl/tTeWXV) |
+[Linux x32](https://goo.gl/CYtbLt) |
+[Linux x64](https://goo.gl/de9Bt6) |
+[Mac OS X](https://goo.gl/8z6SR3) |
+[Windows x32](https://goo.gl/6pYQ24) |
+[Windows x64](https://goo.gl/FuU8mY)
+
 # v1.4.1
 
 - Update `vega` and `vega-lite` version.
