@@ -1,3 +1,9 @@
+# v1.5.0
+
+- Add debug button to toggle Chrome inspector.
+- Update `electron` version.
+- Update `vega` and `vega-lite` version.
+
 # v1.4.3
 
 - Update `vega` and `vega-lite` version.

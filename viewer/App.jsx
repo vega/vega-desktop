@@ -1,14 +1,16 @@
-import chokidar from 'chokidar';
-import { remote } from 'electron';
-import path from 'path';
-import React from 'react';
-import PropTypes from 'prop-types';
-import DropArea from './components/DropArea';
 import { FORMAT, readVegaFile } from './utils/helper';
 import { showOpenDialog, showSaveDialog } from './utils/dialog';
+
+import DropArea from './components/DropArea';
+import PropTypes from 'prop-types';
+import React from 'react';
 import VegaRenderer from './components/VegaRenderer';
+import chokidar from 'chokidar';
 import downloadURI from './utils/downloadURI';
+import path from 'path';
+import { remote } from 'electron';
 import styled from 'styled-components';
+
 const vg = require('vega');
 const vl = require('vega-lite');
 
@@ -211,6 +213,16 @@ class App extends React.Component {
             <i className="fa fa-download" aria-hidden="true" />
             &nbsp;PNG
           </button>
+          <button
+            className="-gray"
+            onClick={() => {
+              remote.getCurrentWindow().toggleDevTools();
+            }}
+          >
+            <i className="fa fa-bug" aria-hidden="true" />
+            &nbsp;Debug
+          </button>
+
         </MenuBar>
         <div className="container">
           <div className="inner-container">
