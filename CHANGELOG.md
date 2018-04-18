@@ -8,6 +8,14 @@
 
 - Update `vega` and `vega-lite` version.
 
+**Download:**
+[Linux armv7l](https://goo.gl/xfmqqo) |
+[Linux x32](https://goo.gl/KAer4q) |
+[Linux x64](https://goo.gl/9WYQXB) |
+[Mac OS X](https://goo.gl/PmhGC7) |
+[Windows x32](https://goo.gl/VHQdsw) |
+[Windows x64](https://goo.gl/QyhBPu)
+
 # v1.4.2
 
 - Fix issue with electron-packager due to yarn node_modules hoisting.

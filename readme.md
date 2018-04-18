@@ -2,13 +2,13 @@
 
 > App for viewing visualizations created in Vega or Vega-lite
 
-**Download:**
-[Linux armv7l](https://goo.gl/xfmqqo) |
-[Linux x32](https://goo.gl/KAer4q) |
-[Linux x64](https://goo.gl/9WYQXB) |
-[Mac OS X](https://goo.gl/PmhGC7) |
-[Windows x32](https://goo.gl/VHQdsw) |
-[Windows x64](https://goo.gl/QyhBPu)
+**Download (v1.5.0):**
+[Linux armv7l](https://goo.gl/gqsK6J) |
+[Linux x32](https://goo.gl/GSPmi6) |
+[Linux x64](https://goo.gl/w7Qn8L) |
+[Mac OS X](https://goo.gl/yu8Sq6) |
+[Windows x32](https://goo.gl/cXmsRo) |
+[Windows x64](https://goo.gl/UnRnKg)
 
 To download previous versions, please see [CHANGELOG](CHANGELOG.md).
 
