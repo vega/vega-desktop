@@ -14,6 +14,15 @@ import styled from 'styled-components';
 const vg = require('vega');
 const vl = require('vega-lite');
 
+window.VEGA_DEBUG = window.VEGA_DEBUG || {};
+window.VEGA_DEBUG = {};
+window.VEGA_DEBUG.vega = vg;
+window.VEGA_DEBUG.vl = vl;
+window.VEGA_DEBUG.VEGA_VERSION = vg.version;
+window.VEGA_DEBUG.VEGA_LITE_VERSION = vl.version;
+console.log('%cWelcome to Vega-Desktop!', 'font-size: 16px; font-weight: bold;');
+console.log('You can access the Vega view with VEGA_DEBUG. Learn more at https://vega.github.io/vega/docs/api/debugging/.');
+
 const propTypes = {
   className: PropTypes.string,
 };

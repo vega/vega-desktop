@@ -1,7 +1,7 @@
-import path from 'path';
-import React from 'react';
-import PropTypes from 'prop-types';
 import { FORMAT } from '../utils/helper';
+import PropTypes from 'prop-types';
+import React from 'react';
+import path from 'path';
 const vg = require('vega');
 const vl = require('vega-lite');
 
@@ -77,11 +77,16 @@ class VegaRenderer extends React.PureComponent {
           mode: 'file'
         });
 
+        window.VEGA_DEBUG.view = null;
+
         this.view = new vg.View(runtime, { loader })
           .initialize(this.container)
           .renderer(renderer)
           .hover()
           .run();
+
+        window.VEGA_DEBUG.view = this.view;
+
       } catch (ex) {
         this.showError(`Invalid vega spec: ${ex.message}`);
       }
