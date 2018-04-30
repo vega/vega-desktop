@@ -31,23 +31,23 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
-    "chokidar": "^1.7.0",
+    "chokidar": "^2.0.2",
     "electron-context-menu": "^0.9.1",
     "electron-debug": "^1.0.0",
     "font-awesome": "^4.7.0",
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "styled-components": "^2.4.0",
-    "vega": "^3.2.1",
-    "vega-lite": "^2.3.1",
+    "vega": "^3.3.1",
+    "vega-lite": "^2.4.1",
     "vega-schema-url-parser": "^1.0.0"
   },
   "devDependencies": {
-    "devtron": "^1.1.0",
-    "electron": "^1.8.4",
-    "electron-packager": "^8.7.0",
-    "xo": "^0.18.0"
+    "devtron": "^1.4.0",
+    "electron": "^1.8.6",
+    "electron-packager": "^12.0.1",
+    "xo": "^0.20.3"
   },
   "xo": {
     "esnext": true,
