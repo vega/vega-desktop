@@ -1,5 +1,16 @@
+# v1.6.1
+- Update dependencies
+
 # v1.6.0
 - Expose `VEGA_DEBUG`
+
+**Download:**
+[Linux armv7l](https://goo.gl/MDnyoo) |
+[Linux x32](https://goo.gl/N2jhkj) |
+[Linux x64](https://goo.gl/Pove48) |
+[Mac OS X](https://goo.gl/cAo9mM) |
+[Windows x32](https://goo.gl/sFD48w) |
+[Windows x64](https://goo.gl/pBEUCV)
 
 # v1.5.0
 
