@@ -1,4 +1,9 @@
+# v1.6.2
+
+- Update `vega` and `vega-lite` version.
+
 # v1.6.1
+
 - Update dependencies
 
 # v1.6.0
