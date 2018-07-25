@@ -31,7 +31,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
-    "chokidar": "^2.0.2",
+    "chokidar": "^2.0.4",
     "electron-context-menu": "^0.9.1",
     "electron-debug": "^1.0.0",
     "font-awesome": "^4.7.0",
@@ -45,9 +45,9 @@
   },
   "devDependencies": {
     "devtron": "^1.4.0",
-    "electron": "^1.8.6",
+    "electron": "^2.0.5",
     "electron-packager": "^12.1.0",
-    "xo": "^0.20.3"
+    "xo": "^0.21.1"
   },
   "xo": {
     "esnext": true,

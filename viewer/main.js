@@ -1,6 +1,6 @@
-import ReactDOM from 'react-dom';
-import React from 'react';
 import App from './App.jsx';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 // To prevent redirecting to the file when dropping anything
 // https://stackoverflow.com/questions/31670803/prevent-electron-app-from-redirecting-when-dragdropping-items-in-window
@@ -11,3 +11,8 @@ ReactDOM.render(
   <App />,
   document.getElementById('app')
 );
+
+// eslint-disable-next-line
+window.eval = global.eval = function () {
+	throw new Error(`Sorry, this app does not support window.eval().`)
+}
