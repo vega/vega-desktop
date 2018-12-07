@@ -28,26 +28,26 @@
     "electron"
   ],
   "dependencies": {
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "chokidar": "^2.0.4",
-    "electron-context-menu": "^0.9.1",
-    "electron-debug": "^1.0.0",
+    "electron-context-menu": "^0.10.1",
+    "electron-debug": "^2.0.0",
     "font-awesome": "^4.7.0",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "styled-components": "^2.4.0",
-    "vega": "^4.2.0",
-    "vega-lite": "^2.6.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "styled-components": "^4.1.2",
+    "vega": "^4.4.0",
+    "vega-lite": "^3.0.0-rc10",
     "vega-schema-url-parser": "^1.1.0"
   },
   "devDependencies": {
     "devtron": "^1.4.0",
-    "electron": "^2.0.5",
-    "electron-packager": "^12.1.0",
-    "xo": "^0.21.1"
+    "electron": "^3.0.10",
+    "electron-packager": "^13.0.0",
+    "xo": "^0.23.0"
   },
   "xo": {
     "esnext": true,
