@@ -1,9 +1,0 @@
-{
-  "generator-summon": {
-    "summon:github": {
-      "use-summon:github": true,
-      "name": "vega-desktop",
-      "githubAccount": "kristw"
-    }
-  }
-}
