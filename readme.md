@@ -2,7 +2,7 @@
 
 > App for viewing visualizations created in Vega or Vega-Lite.
 
-**Download from [GitHub](https://github.com/vega/vega-desktop/releases) releases.**
+**Download from [GitHub releases](https://github.com/vega/vega-desktop/releases).**
 
 To download versions before 2.0, please see [CHANGELOG](CHANGELOG.md).
 
