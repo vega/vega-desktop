@@ -9,8 +9,8 @@
     "test": "xo",
     "format": "xo --fix",
     "start": "electron .",
-    "build": "electron-packager . --out=dist --app-version=$npm_package_version --asar --overwrite --platform=darwin --arch=all",
-    "build-all": "electron-packager . --out=dist --app-version=$npm_package_version --asar --overwrite --all",
+    "build": "electron-packager . --out=dist --app-version=$npm_package_version --asar --overwrite --platform=darwin --arch=all --icon=assets/icon.icns",
+    "build-all": "electron-packager . --out=dist --app-version=$npm_package_version --asar --overwrite --all --icon=assets/icon.icns",
     "zip": "sh ./zip.sh",
     "package": "npm run build-all && npm run zip"
   },

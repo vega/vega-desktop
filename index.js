@@ -23,7 +23,7 @@ function createAppWindow(filePath) {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
-    icon: path.join(__dirname, 'icon.icns'),
+    icon: path.join(__dirname, 'assets', 'icon.icns'),
     webPreferences: {
       nodeIntegration: true
     }
