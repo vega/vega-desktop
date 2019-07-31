@@ -1,7 +1,7 @@
 {
   "name": "vega-desktop",
   "productName": "VegaDesktop",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "App for viewing visualizations created in Vega or Vega-lite",
   "license": "MIT",
   "repository": "vega/vega-desktop",
