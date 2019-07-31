@@ -1,17 +1,18 @@
-import { FORMAT } from '../utils/helper';
+import path from 'path';
 import PropTypes from 'prop-types';
 import React from 'react';
-import path from 'path';
+import {FORMAT} from '../utils/helper';
+
 const vg = require('vega');
 const vl = require('vega-lite');
 
 const propTypes = {
   className: PropTypes.string,
-  renderer: PropTypes.string,
+  renderer: PropTypes.string
 };
 const defaultProps = {
   className: '',
-  renderer: 'canvas',
+  renderer: 'canvas'
 };
 
 class VegaRenderer extends React.PureComponent {
@@ -32,6 +33,7 @@ class VegaRenderer extends React.PureComponent {
     if (this.view) {
       return this.view.toImageURL(type);
     }
+
     return Promise.reject('No input');
   }
 
@@ -40,21 +42,21 @@ class VegaRenderer extends React.PureComponent {
   }
 
   update() {
-    const { spec, format, filePath, renderer } = this.props;
-    if(spec) {
+    const {spec, format, filePath, renderer} = this.props;
+    if (spec) {
       let vegaSpec;
 
       if (format === FORMAT.VEGA_LITE) {
         try {
           vegaSpec = vl.compile(spec).spec;
-        } catch (ex) {
-          this.showError(`Invalid vega-lite spec: ${ex.message}`);
+        } catch (error) {
+          this.showError(`Invalid vega-lite spec: ${error.message}`);
           return;
         }
       } else if (format === FORMAT.UNKNOWN) {
         try {
           vegaSpec = vl.compile(spec).spec;
-        } catch (ex) {
+        } catch (error) {
           vegaSpec = spec;
         }
       } else {
@@ -65,6 +67,7 @@ class VegaRenderer extends React.PureComponent {
       if (this.view) {
         this.view.finalize();
       }
+
       this.container.innerHTML = '';
 
       try {
@@ -72,33 +75,34 @@ class VegaRenderer extends React.PureComponent {
 
         // Tell loader to resolve data and image files
         // relative to the spec file
-        const loader = new vg.loader({
+        const loader = vg.loader({
           baseURL: path.dirname(filePath),
           mode: 'file'
         });
 
         window.VEGA_DEBUG.view = null;
 
-        this.view = new vg.View(runtime, { loader })
+        this.view = new vg.View(runtime, {loader})
           .initialize(this.container)
           .renderer(renderer)
           .hover()
           .run();
 
         window.VEGA_DEBUG.view = this.view;
-
-      } catch (ex) {
-        this.showError(`Invalid vega spec: ${ex.message}`);
+      } catch (error) {
+        this.showError(`Invalid vega spec: ${error.message}`);
       }
     }
   }
 
   render() {
-    const { className, filePath } = this.props;
+    const {className} = this.props;
     return (
       <div
         className={className}
-        ref={c => { this.container = c; }}
+        ref={c => {
+          this.container = c;
+        }}
       />
     );
   }

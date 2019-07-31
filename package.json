@@ -7,9 +7,10 @@
   "repository": "vega/vega-desktop",
   "scripts": {
     "test": "xo",
+    "format": "xo --fix",
     "start": "electron .",
-    "build": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --platform=darwin --arch=all",
-    "build-all": "electron-packager . --out=dist --app-version=$npm_package_version --prune --asar --overwrite --all",
+    "build": "electron-packager . --out=dist --app-version=$npm_package_version --asar --overwrite --platform=darwin --arch=all",
+    "build-all": "electron-packager . --out=dist --app-version=$npm_package_version --asar --overwrite --all",
     "zip": "sh ./zip.sh",
     "package": "npm run build-all && npm run zip"
   },
@@ -42,6 +43,7 @@
     "devtron": "^1.4.0",
     "electron": "^6.0.0",
     "electron-packager": "^14.0.4",
+    "eslint-plugin-react": "^7.14.3",
     "xo": "^0.24.0"
   },
   "xo": {
@@ -49,6 +51,10 @@
     "envs": [
       "node",
       "browser"
+    ],
+    "space": true,
+    "plugins": [
+      "react"
     ]
   },
   "bugs": {

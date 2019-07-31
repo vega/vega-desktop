@@ -1,18 +1,18 @@
-const { app, BrowserWindow } = require('electron');
+const {app, BrowserWindow} = require('electron');
 const path = require('path');
 const url = require('url');
 
-// adds debug features like hotkeys for triggering dev tools and reload
-require('electron-debug')({ showDevTools: true });
+// Adds debug features like hotkeys for triggering dev tools and reload
+require('electron-debug')({showDevTools: true});
 
 require('electron-context-menu')();
 
-// prevent window being garbage collected
+// Prevent window being garbage collected
 const appWindows = [];
 const fileQueue = [];
 
 function onClosed(win) {
-  // dereference the window
+  // Dereference the window
   return () => {
     const index = appWindows.indexOf(win);
     appWindows.splice(index, 1);
@@ -23,7 +23,7 @@ function createAppWindow(filePath) {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
-    icon: __dirname + 'icon.icns',
+    icon: path.join(__dirname, 'icon.icns'),
     webPreferences: {
       nodeIntegration: true
     }
@@ -33,9 +33,9 @@ function createAppWindow(filePath) {
     filePath: filePath || null
   };
 
-  // and load the index.html of the app.
+  // And load the index.html of the app.
   win.loadURL(url.format({
-    pathname: path.join(__dirname, 'viewer/index.html'),
+    pathname: path.join(__dirname, 'viewer', 'index.html'),
     protocol: 'file:',
     slashes: true
   }));

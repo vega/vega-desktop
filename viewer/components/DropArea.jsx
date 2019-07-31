@@ -4,11 +4,11 @@ import styled from 'styled-components';
 
 const propTypes = {
   className: PropTypes.string,
-  onLoad: PropTypes.func,
+  onLoad: PropTypes.func
 };
 const defaultProps = {
   className: '',
-  onLoad() {},
+  onLoad() {}
 };
 
 const Div = styled.div`
@@ -25,30 +25,30 @@ class DropArea extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOver: false,
+      isOver: false
     };
   }
 
   render() {
-    const { className, children } = this.props;
-    const { isOver } = this.state;
+    const {className, children} = this.props;
+    const {isOver} = this.state;
 
     return (
       <Div
         isOver={isOver}
         className={className}
         onDragOver={() => {
-          this.setState({ isOver: true });
+          this.setState({isOver: true});
           return false;
         }}
         onDragLeave={() => {
-          this.setState({ isOver: false });
+          this.setState({isOver: false});
           return false;
         }}
         onDrop={e => {
           e.preventDefault();
           e.stopPropagation();
-          this.setState({ isOver: false });
+          this.setState({isOver: false});
           const file = e.dataTransfer.files[0];
           this.props.onLoad(file.path);
           return false;

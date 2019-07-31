@@ -1,6 +1,6 @@
 # Vega-Desktop
 
-> App for viewing visualizations created in Vega or Vega-Lite. We are not actively maintinaing this application. Please use the [Vega-Editor](https://vega.github.io/editor/). 
+> App for viewing visualizations created in Vega or Vega-Lite. We are not always keeping the versions of Vega and Vega-Lite up to date. Please use the [Vega-Editor](https://vega.github.io/editor/) to work with the latest versions. 
 
 **Download from [GitHub releases](https://github.com/vega/vega-desktop/releases).**
 

@@ -1,15 +1,13 @@
-import { FORMAT, readVegaFile } from './utils/helper';
-import { showOpenDialog, showSaveDialog } from './utils/dialog';
+import {remote} from 'electron';
+import React from 'react';
+import chokidar from 'chokidar';
+import styled from 'styled-components';
+import {FORMAT, readVegaFile} from './utils/helper';
+import {showOpenDialog} from './utils/dialog';
 
 import DropArea from './components/DropArea';
-import PropTypes from 'prop-types';
-import React from 'react';
 import VegaRenderer from './components/VegaRenderer';
-import chokidar from 'chokidar';
 import downloadURI from './utils/downloadURI';
-import path from 'path';
-import { remote } from 'electron';
-import styled from 'styled-components';
 
 const vg = require('vega');
 const vl = require('vega-lite');
@@ -20,23 +18,17 @@ window.VEGA_DEBUG.vega = vg;
 window.VEGA_DEBUG.vl = vl;
 window.VEGA_DEBUG.VEGA_VERSION = vg.version;
 window.VEGA_DEBUG.VEGA_LITE_VERSION = vl.version;
+
 console.log('%cWelcome to Vega-Desktop!', 'font-size: 16px; font-weight: bold;');
 console.log('You can access the Vega view with VEGA_DEBUG. Learn more at https://vega.github.io/vega/docs/api/debugging/.');
 
-const propTypes = {
-  className: PropTypes.string,
-};
-const defaultProps = {
-  className: '',
-};
-
-const MenuBar =  styled.div`
+const MenuBar = styled.div`
   background-color: #eee;
   padding: 5px;
   position: fixed;
   width: 100%;
   z-index: 100;
-`
+`;
 
 const StatusBar = styled.div`
   background-color: #efefef;
@@ -47,7 +39,7 @@ const StatusBar = styled.div`
   bottom: 0;
   right: 0;
   left: 0;
-`
+`;
 
 class App extends React.Component {
   constructor(props) {
@@ -58,7 +50,7 @@ class App extends React.Component {
       watching: false,
       loading: false,
       spec: null,
-      error: null,
+      error: null
     };
     this.view = null;
     this.watcher = null;
@@ -72,7 +64,7 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
-    const { filePath } = this.state;
+    const {filePath} = this.state;
     if (filePath) {
       document.title = `Vega Desktop - ${filePath}`;
     } else {
@@ -91,14 +83,14 @@ class App extends React.Component {
     this.setState({
       filePath,
       loading: true,
-      error: null,
+      error: null
     });
     readVegaFile(filePath).then(
       data => {
         this.setState({
           loading: false,
           spec: data.spec,
-          format: data.format,
+          format: data.format
         });
       },
       error => {
@@ -107,7 +99,7 @@ class App extends React.Component {
           error
         });
       }
-    )
+    );
   }
 
   exportFile(type) {
@@ -125,17 +117,18 @@ class App extends React.Component {
   }
 
   toggleWatch() {
-    const { watching } = this.state;
+    const {watching} = this.state;
     if (watching) {
       this.unwatch();
     } else {
       this.watch();
     }
-    this.setState({ watching: !watching });
+
+    this.setState({watching: !watching});
   }
 
   watch() {
-    const { filePath } = this.state;
+    const {filePath} = this.state;
     if (filePath) {
       this.unwatch();
       this.watcher = chokidar.watch(filePath)
@@ -153,8 +146,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { format, watching, spec, filePath } = this.state;
-    const { className } = this.props;
+    const {format, watching, spec, filePath} = this.state;
 
     return (
       <DropArea
@@ -168,7 +160,7 @@ class App extends React.Component {
               <button
                 className={format === FORMAT.VEGA ? '-purple' : '-gray'}
                 onClick={() => {
-                  this.setState({ format: FORMAT.VEGA });
+                  this.setState({format: FORMAT.VEGA});
                 }}
               >
                 Vega
@@ -176,7 +168,7 @@ class App extends React.Component {
               <button
                 className={format === FORMAT.VEGA_LITE ? '-purple' : '-gray'}
                 onClick={() => {
-                  this.setState({ format: FORMAT.VEGA_LITE });
+                  this.setState({format: FORMAT.VEGA_LITE});
                 }}
               >
                 Vega-Lite
@@ -188,7 +180,7 @@ class App extends React.Component {
             onClick={() => {
               showOpenDialog().then(
                 filePath => this.handleFile(filePath),
-                error => this.setState({ error }),
+                error => this.setState({error}),
               );
             }}
           >
@@ -236,7 +228,9 @@ class App extends React.Component {
         <div className="container">
           <div className="inner-container">
             <VegaRenderer
-              ref={c => { this.vega = c; }}
+              ref={c => {
+                this.vega = c;
+              }}
               className="vis"
               format={format}
               spec={spec}
@@ -245,16 +239,13 @@ class App extends React.Component {
           </div>
         </div>
         <StatusBar>
-          {format === FORMAT.VEGA_LITE
-            ? `Vega-Lite v${vl.version}`
-            : `Vega v${vg.version}`}
+          {format === FORMAT.VEGA_LITE ?
+            `Vega-Lite v${vl.version}` :
+            `Vega v${vg.version}`}
         </StatusBar>
       </DropArea>
     );
   }
 }
-
-App.propTypes = propTypes;
-App.defaultProps = defaultProps;
 
 export default App;
