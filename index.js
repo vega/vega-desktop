@@ -22,7 +22,11 @@ function onClosed(win) {
 function createAppWindow(filePath) {
   const win = new BrowserWindow({
     width: 800,
-    height: 600
+    height: 600,
+    icon: __dirname + 'icon.icns',
+    webPreferences: {
+      nodeIntegration: true
+    }
   });
 
   win.extraInfo = {

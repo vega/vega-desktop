@@ -1,3 +1,10 @@
+# v3.0.0
+
+- Update to electron 6
+- Update Vega (v5) and Vega-Lite (v3)
+- Download from GitHub releases
+
+
 # v2.0.0
 
 - Update to electron 3
