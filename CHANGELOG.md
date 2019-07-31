@@ -1,21 +1,27 @@
-# v3.0.0
+# Changelog
 
-- Update to electron 6
+Download builds from GitHub releases. 
+
+## v3.1.0
+
+- Refactor and add icons
+
+## v3.0.0
+
+- Update to Electron 6
 - Update Vega (v5) and Vega-Lite (v3)
-- Download from GitHub releases
 
+## v2.0.0
 
-# v2.0.0
-
-- Update to electron 3
+- Update to Electron 3
 - Update Vega (v4.4) and Vega-Lite (v3)
 - Download from GitHub releases
 
-# v1.6.2
+## v1.6.2
 
-- Update `vega` and `vega-lite` version.
+- Update `vega` and `vega-lite` version
 
-# v1.6.1
+## v1.6.1
 
 - Update dependencies
 
@@ -27,7 +33,7 @@
 [Windows x32](https://goo.gl/LXCYay) |
 [Windows x64](https://goo.gl/h6rgn6)
 
-# v1.6.0
+## v1.6.0
 - Expose `VEGA_DEBUG`
 
 **Download:**
@@ -38,7 +44,7 @@
 [Windows x32](https://goo.gl/sFD48w) |
 [Windows x64](https://goo.gl/pBEUCV)
 
-# v1.5.0
+## v1.5.0
 
 - Add debug button to toggle Chrome inspector.
 - Update `electron` version.
@@ -52,7 +58,7 @@
 [Windows x32](https://goo.gl/cXmsRo) |
 [Windows x64](https://goo.gl/UnRnKg)
 
-# v1.4.3
+## v1.4.3
 
 - Update `vega` and `vega-lite` version.
 
@@ -64,7 +70,7 @@
 [Windows x32](https://goo.gl/VHQdsw) |
 [Windows x64](https://goo.gl/QyhBPu)
 
-# v1.4.2
+## v1.4.2
 
 - Fix issue with electron-packager due to yarn node_modules hoisting.
 
@@ -76,17 +82,17 @@
 [Windows x32](https://goo.gl/6pYQ24) |
 [Windows x64](https://goo.gl/FuU8mY)
 
-# v1.4.1
+## v1.4.1
 
 - Update `vega` and `vega-lite` version.
 
-# v1.4.0
+## v1.4.0
 
 - Can export to `png` and `svg`
 - Migrate from plain javascript to React
 - Show Vega and Vega-Lite version
 
-# v1.3.0
+## v1.3.0
 
 Add "Watch Mode".
 
@@ -103,7 +109,7 @@ Add "Watch Mode".
 [Linux x64](https://goo.gl/bnDnMC) |
 [Linux armv7l](https://goo.gl/2kkuau)
 
-# v1.2.1
+## v1.2.1
 
 Use `vega-schema-url-parser` instead of manual parsing. [Issue #1](https://github.com/kristw/vega-desktop/issues/1)
 
@@ -115,7 +121,7 @@ Use `vega-schema-url-parser` instead of manual parsing. [Issue #1](https://githu
 [Linux x64](https://drive.google.com/open?id=0B3gNKxO3XU4dMHFPOW1UeEFwX2M) |
 [Linux armv7l](https://drive.google.com/open?id=0B3gNKxO3XU4da2RtYnc3YW1oS1E)
 
-# v1.2.0
+## v1.2.0
 
 Can load data files relative to the spec file.
 
@@ -127,7 +133,7 @@ Can load data files relative to the spec file.
 [Linux x64](https://drive.google.com/open?id=0B3gNKxO3XU4dQUdVU2JjZWJVcDg) |
 [Linux armv7l](https://drive.google.com/open?id=0B3gNKxO3XU4dLXFaS01BLURrOVE)
 
-# v1.1.0
+## v1.1.0
 
 Can use as a default app to `vega` and `vega-lite` spec files.
 
@@ -139,7 +145,7 @@ Can use as a default app to `vega` and `vega-lite` spec files.
 [Linux x64](https://drive.google.com/open?id=0B3gNKxO3XU4dTVcyWk1Nd0JMekU) |
 [Linux armv7l](https://drive.google.com/open?id=0B3gNKxO3XU4dY0dEOGluakNEa1E)
 
-# v1.0.0
+## v1.0.0
 
 First version. Can read both `vega` and `vega-lite` spec files.
 Can determine the file format if the extension is `*.vg.json` or `*.vl.json`.
